@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Registro</h1>
+    <form action="" method="POST" enctype="multipart/form-data">
+        <input type="text" placeholder="nombre de usuario" name="username">
+        <input type="email" name="email" id="" placeholder="email">
+        <input type="password" placeholder="contraseña" name="pass">
+        <input type="password" placeholder="reingrese su contraseña" name="pass2">
+        <input type="file" name="avatar"> <!-- Al usar subida de archivos si coloca como atributo al form : enctype="multipart/form-data" -->
+        
+        <button type="submit">Registrarse</button>
+    </form>
+
+    <% if(typeof errores != 'undefined'){ %> <!-- Si hay errores -->
+        <ul>
+            <% errores.forEach(cadaError=>{ %> <!-- de los errores que tengo que recorra cada objeto -->
+                <li> <%= cadaError.msg %> </li>  <!-- muestra el mensaje -->
+            <% }) %>
+        </ul>
+
+    <% } %> 
+
+</body>
+</html>
